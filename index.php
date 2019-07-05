@@ -1,7 +1,8 @@
 <?php
-
+define('PROJECT_PATH','/var/www');
 require __DIR__.'/vendor/autoload.php';
-require __DIR__.'/QueryBuilder/QueryBuilder.php';
+require __DIR__ . '/QueryBuilder/QueryBuilder.php';
+
 
 
 /*
@@ -20,9 +21,16 @@ if(mysqli_connect_errno()){
 echo "\n";
 */
  
- 
+$builder = new \QueryBuilder\QueryBuilder();
+$query = $builder->select(["id","name","author"])->from(["songs"])->where()->lesserThan("id",5)
+    ->greaterThan("id",2,"AND")->groupBy("id")
+    ->orderBy()->asc("id")->desc("title")->get();
 
-$builder = new QueryBuilder\QueryBuilder();
-$query = $builder->select()->from()->get();
 
 echo $query.PHP_EOL;
+
+$query = $builder->select()->max("id")->count("music","album")->asColumns(["id"=>"number"])
+    ->from("songs")->get();
+
+echo $query.PHP_EOL;
+
