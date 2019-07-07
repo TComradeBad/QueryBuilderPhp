@@ -17,11 +17,11 @@ class Select extends AbstractQuery {
             {
             foreach ($columns as $column)
             {
-                $this->query=$this->query.$column.",";
+                $this->query.=$column.",";
             }
             }else
             {
-                $this->query=$this->query.$columns.",";
+                $this->query.=$columns.",";
             }
         }
 
@@ -48,10 +48,10 @@ class Select extends AbstractQuery {
         {
             if(isset($asColumn))
             {
-                $this->query=$this->query."count($columns) AS $asColumn,";
+                $this->query.="count($columns) AS $asColumn,";
             }else
             {
-                $this->query=$this->query."count($columns),";
+                $this->query.="count($columns),";
             }
             return $this;
 
@@ -63,10 +63,10 @@ class Select extends AbstractQuery {
         {
             if(isset($asColumn))
             {
-                $this->query=$this->query."MIN($columns) AS $asColumn,";
+                $this->query.="MIN($columns) AS $asColumn,";
             }else
             {
-                $this->query=$this->query."MIN($columns),";
+                $this->query.="MIN($columns),";
             }
             return $this;
         }
@@ -76,10 +76,10 @@ class Select extends AbstractQuery {
          {
              if(isset($asColumn))
              {
-                 $this->query=$this->query."MAX($columns) AS $asColumn,";
+                 $this->query.="MAX($columns) AS $asColumn,";
              }else
              {
-                 $this->query=$this->query."MAX($columns),";
+                 $this->query.="MAX($columns),";
              }
              return $this;
          }

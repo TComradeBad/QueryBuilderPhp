@@ -27,10 +27,18 @@ $query = $builder->select(["id","name","author"])->from(["songs"])->where()->les
     ->orderBy()->asc("id")->desc("title")->get();
 
 
-echo $query.PHP_EOL;
+//echo $query.PHP_EOL;
 
 $query = $builder->select()->max("id")->count("music","album")->asColumns(["id"=>"number"])
     ->from("songs")->get();
+
+//echo $query.PHP_EOL;
+
+$query = $builder->insert("songs",["id","title"])->values([["1","hello"],["2","bye"]])->get();
+
+echo $query.PHP_EOL;
+
+$query = $builder->insert("songs","id")->values("1")->get();
 
 echo $query.PHP_EOL;
 

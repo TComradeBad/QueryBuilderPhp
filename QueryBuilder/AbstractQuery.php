@@ -2,7 +2,7 @@
 
 namespace QueryBuilder;
 
-class AbstractQuery{
+abstract class AbstractQuery{
 
 protected $query = null;
 

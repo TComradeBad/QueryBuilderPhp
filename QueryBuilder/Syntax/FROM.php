@@ -17,12 +17,12 @@ class FROM extends AbstractQuery
         {
             foreach ($tables as $table)
             {
-                $this->query=$this->query.$table.",";
+                $this->query.=$table.",";
             }
             $this->query=substr_replace($this->query,' ',-1);
         }else
         {
-            $this->query=$this->query.$tables." ";
+            $this->query.=$tables." ";
         }
 
 

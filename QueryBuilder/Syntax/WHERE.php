@@ -20,26 +20,26 @@ class WHERE extends AbstractQuery{
 
     public function greaterThan($var1,$var2,$logicalOp = "")
     {
-        $this->query=$this->query.$logicalOp." ($var1 > $var2) " ;
+        $this->query.=$logicalOp." ($var1 > $var2) " ;
         return $this;
     }
 
     public function lesserThan($var1,$var2,$logicalOp = "")
     {
-        $this->query=$this->query.$logicalOp." ($var1 < $var2) ";
+        $this->query.=$logicalOp." ($var1 < $var2) ";
         return $this;
 
     }
 
     public function equals($var1,$var2,$logicalOp = "")
     {
-        $this->query=$this->query.$logicalOp." ($var1 = $var2) ";
+        $this->query.=$logicalOp." ($var1 = $var2) ";
         return $this;
     }
 
     public function notEquals($var1,$var2,$logicalOp = "")
     {
-        $this->query=$this->query.$logicalOp." ($var1 != $var2) ";
+        $this->query.=$logicalOp." ($var1 != $var2) ";
         return $this;
     }
 

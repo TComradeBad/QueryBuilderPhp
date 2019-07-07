@@ -20,13 +20,13 @@ class OrderBy extends AbstractQuery
 
     public function asc($column)
     {
-        $this->query=$this->query.$column." ASC,";
+        $this->query.=$column." ASC,";
         return $this;
     }
 
     public function desc($column)
     {
-        $this->query=$this->query.$column." DESC,";
+        $this->query.=$column." DESC,";
         return $this;
     }
 
