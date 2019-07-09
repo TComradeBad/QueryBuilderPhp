@@ -22,7 +22,8 @@ echo "\n";
 */
  
 $builder = new \QueryBuilder\QueryBuilder();
-$query = $builder->select(["id","name","author"])->from(["songs"])->where()->lesserThan("id",5)
+$query = $builder->select(["id","name","author"])->from(["songs"])
+    ->where()->lesserThan("id",5)
     ->greaterThan("id",2,"AND")->groupBy("id")
     ->orderBy()->asc("id")->desc("title")->get();
 
@@ -41,4 +42,6 @@ echo $query.PHP_EOL;
 $query = $builder->insert("songs","id")->values("1")->get();
 
 echo $query.PHP_EOL;
+
+
 
