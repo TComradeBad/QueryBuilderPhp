@@ -1,17 +1,12 @@
 <?php
 
-namespace QueryBuilder\Syntax;
+namespace tcb\QueryBuilder\Syntax;
 
-require_once PROJECT_PATH."/QueryBuilder/AbstractQuery.php";
-require_once PROJECT_PATH."/QueryBuilder/Syntax/OrderBy.php";
-require_once PROJECT_PATH."/QueryBuilder/Syntax/GroupBy.php";
-use QueryBuilder\AbstractQuery;
-use QueryBuilder\Syntax\OrderBy;
-use QueryBuilder\Syntax\GroupBy;
+use tcb\QueryBuilder\AbstractQuery;
+use tcb\QueryBuilder\Syntax\OrderBy;
+use tcb\QueryBuilder\Syntax\GroupBy;
 
-class WHERE extends AbstractQuery{
-
-    private $logicOpIsset = false;
+class Where extends AbstractQuery{
 
     public function __construct($query)
     {

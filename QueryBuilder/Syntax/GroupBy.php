@@ -1,9 +1,8 @@
 <?php
 
-namespace QueryBuilder\Syntax;
-require_once PROJECT_PATH."/QueryBuilder/AbstractQuery.php";
+namespace tcb\QueryBuilder\Syntax;
 
-use QueryBuilder\AbstractQuery;
+use tcb\QueryBuilder\AbstractQuery;
 
 
 class GroupBy extends AbstractQuery

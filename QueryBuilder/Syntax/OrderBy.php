@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Комрад
- * Date: 03.07.2019
- * Time: 2:05
- */
 
-namespace QueryBuilder\Syntax;
-require_once PROJECT_PATH."/QueryBuilder/AbstractQuery.php";
+namespace tcb\QueryBuilder\Syntax;
 
-use QueryBuilder\AbstractQuery;
+use tcb\QueryBuilder\AbstractQuery;
 
 class OrderBy extends AbstractQuery
 {

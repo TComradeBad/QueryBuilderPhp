@@ -1,15 +1,11 @@
 <?php
 
-namespace QueryBuilder;
+namespace tcb\QueryBuilder;
 
-require_once PROJECT_PATH."/QueryBuilder/Syntax/Select.php";
-require_once PROJECT_PATH."/QueryBuilder/Syntax/Insert.php";
-require_once PROJECT_PATH."/QueryBuilder/Syntax/Drop.php";
-require_once PROJECT_PATH."/QueryBuilder/Syntax/Create.php";
-use QueryBuilder\Syntax\Select;
-use QueryBuilder\Syntax\Insert;
-use QueryBuilder\Syntax\Drop;
-use QueryBuilder\Syntax\Create;
+use tcb\QueryBuilder\Syntax\Select;
+use tcb\QueryBuilder\Syntax\Insert;
+use tcb\QueryBuilder\Syntax\Drop;
+use tcb\QueryBuilder\Syntax\Create;
 
 class QueryBuilder {
 

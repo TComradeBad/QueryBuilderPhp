@@ -10,9 +10,14 @@
     }
   ],
   "require": {
-    "react/http": "dev-master",
-    "react/http-client": "dev-master",
-    "react/event-loop": "0.4.x-dev"
+    "phpunit/phpunit": "8.2.4"
 
+  },
+  "autoload": {
+    "psr-4": {
+      "tcb\\": ""
+
+    }
   }
+
 }

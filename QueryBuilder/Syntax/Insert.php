@@ -1,9 +1,9 @@
 <?php
 
+namespace tcb\QueryBuilder\Syntax;
 
-namespace QueryBuilder\Syntax;
-require_once PROJECT_PATH."/QueryBuilder/AbstractQuery.php";
-use QueryBuilder\AbstractQuery;
+use tcb\QueryBuilder\AbstractQuery;
+
 class Insert extends  AbstractQuery
 {
 

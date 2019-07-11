@@ -1,9 +1,8 @@
 <?php
-namespace QueryBuilder\Syntax;
-require_once PROJECT_PATH."/QueryBuilder/AbstractQuery.php";
-require_once PROJECT_PATH."/QueryBuilder/Syntax/FROM.php";
-use QueryBuilder\AbstractQuery;
-use QueryBuilder\Syntax\FROM;
+namespace tcb\QueryBuilder\Syntax;
+
+use tcb\QueryBuilder\AbstractQuery;
+use tcb\QueryBuilder\Syntax\From;
 
 class Select extends AbstractQuery {
 
@@ -33,7 +32,7 @@ class Select extends AbstractQuery {
         public function from($tables)
         {
         $this->query=substr_replace($this->query,' ',-1);
-        $from = new \QueryBuilder\Syntax\FROM($tables,$this->query);
+        $from = new \tcb\QueryBuilder\Syntax\From($tables,$this->query);
         return $from;
         }
 

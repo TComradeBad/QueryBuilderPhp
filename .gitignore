@@ -1,3 +1,5 @@
 /.idea/
 /nbproject/
 *.log
+/vendor/
+composer.phar

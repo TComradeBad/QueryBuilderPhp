@@ -1,9 +1,6 @@
 <?php
-define('PROJECT_PATH','/var/www');
-require __DIR__.'/vendor/autoload.php';
-require __DIR__ . '/QueryBuilder/QueryBuilder.php';
 
-
+require __DIR__."/vendor/autoload.php";
 
 /*
 $link = mysqli_connect('localhost','comrade','password','musicDB');
@@ -13,7 +10,7 @@ if(mysqli_connect_errno()){
 }else{
     echo "Успешное подключение".PHP_EOL;
 
-    $sql="SELECT * FROM songs";
+    $sql="SELECT * From songs";
     $result = mysqli_query($link,$sql);
     $songs = mysqli_fetch_all($result,1);
     echo print_r($songs);
@@ -21,19 +18,19 @@ if(mysqli_connect_errno()){
 echo "\n";
 */
  
-$builder = new \QueryBuilder\QueryBuilder();
+$builder = new tcb\QueryBuilder\QueryBuilder();
 $query = $builder->select(["id","name","author"])->from(["songs"])
     ->where()->lesserThan("id",5)
     ->greaterThan("id",2,"AND")->groupBy("id")
     ->orderBy()->asc("id")->desc("title")->get();
 
 
-//echo $query.PHP_EOL;
+echo $query.PHP_EOL;
 
 $query = $builder->select()->max("id")->count("music","album")->asColumns(["id"=>"number"])
     ->from("songs")->get();
 
-//echo $query.PHP_EOL;
+echo $query.PHP_EOL;
 
 $query = $builder->insert("songs",["id","title"])->values([["1","hello"],["2","bye"]])->get();
 

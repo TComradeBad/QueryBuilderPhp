@@ -1,12 +1,11 @@
 <?php
 
-namespace QueryBuilder\Syntax;
-require_once PROJECT_PATH."/QueryBuilder/AbstractQuery.php";
-require_once PROJECT_PATH."/QueryBuilder/Syntax/WHERE.php";
-use QueryBuilder\AbstractQuery;
-use QueryBuilder\Syntax\WHERE;
+namespace tcb\QueryBuilder\Syntax;
 
-class FROM extends AbstractQuery
+use tcb\QueryBuilder\AbstractQuery;
+use tcb\QueryBuilder\Syntax\Where;
+
+class From extends AbstractQuery
 {
 
     public function __construct($tables,$query)
@@ -30,7 +29,7 @@ class FROM extends AbstractQuery
 
     public function where()
     {
-        $where = new WHERE($this->query);
+        $where = new Where($this->query);
         return $where;
     }
 

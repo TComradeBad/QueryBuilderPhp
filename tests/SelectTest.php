@@ -1,12 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Комрад
- * Date: 10.07.2019
- * Time: 14:40
- */
 
-class SelectTest
+use PHPUnit\Framework\TestCase;
+class SelectTest extends TestCase
 {
+
 
 }
