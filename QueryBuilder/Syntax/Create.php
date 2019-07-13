@@ -21,72 +21,128 @@ class Create extends AbstractQuery
         foreach ($columns as $column => $types) {
             $this->tables .= "$column $types,";
         }
+        return $this;
     }
 
     public function char($name,$size,$options=null)
     {
-        $this->tables.="$name CHAR($size) $options,";
+        $this->tables.="$name CHAR($size)";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
 
     }
 
     public function varchar($name,$size,$options=null)
     {
-        $this->tables.="$name VARCHAR($size) $options,";
+        $this->tables.="$name VARCHAR($size)";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function text($name,$options=null)
     {
-        $this->tables.="$name TEXT $options,";
+        $this->tables.="$name TEXT";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function blob($name,$options=null)
     {
-        $this->tables.="$name BLOB $options,";
+        $this->tables.="$name BLOB";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function float($name,$d=2,$options=null)
     {
-        $this->tables.="$name FLOAT($d) $options,";
+        $this->tables.="$name FLOAT($d)";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function decimal($name,$d=2,$options=null)
     {
-        $this->tables.="$name DECIMAL($d) $options,";
+        $this->tables.="$name DECIMAL($d)";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function integer($name,$options=null)
     {
-        $this->tables.="$name INTEGER $options,";
+        $this->tables.="$name INTEGER";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function date($name,$options=null)
     {
-        $this->tables.="$name DATE $options,";
+        $this->tables.="$name DATE";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function timestamp($name,$options=null)
     {
-        $this->tables.="$name TIMESTAMP $options,";
+        $this->tables.="$name TIMESTAMP";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function time($name,$options=null)
     {
-        $this->tables.="$name TIME $options,";
+        $this->tables.="$name TIME";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
     public function datetime($name,$options=null)
     {
-        $this->tables.="$name DATETIME $options,";
+        $this->tables.="$name DATETIME";
+        if(isset($options))
+        {
+            $this->tables.=" $options";
+        }
+        $this->tables.=",";
         return $this;
     }
 
