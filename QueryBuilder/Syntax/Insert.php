@@ -58,19 +58,19 @@ class Insert extends  AbstractQuery
             {
                 $valueDoubleSize=substr_replace($valueDoubleSize,"",-1);
                 $this->values=$valueDoubleSize;
-                $this->values="VALUES".$this->values;
+                $this->values="VALUES ".$this->values;
             }
             if(isset($valueOneSize))
             {
                 $valueOneSize=substr_replace($valueOneSize,"",-1);
                 $valueOneSize="($valueOneSize)";
                 $this->values=$valueOneSize;
-                $this->values="VALUES".$this->values;
+                $this->values="VALUES ".$this->values;
             }
         }else
         {
             $this->values=$values;
-            $this->values="VALUES($this->values)";
+            $this->values="VALUES ($this->values)";
         }
 
 

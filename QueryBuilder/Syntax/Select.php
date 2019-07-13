@@ -7,13 +7,11 @@ use tcb\QueryBuilder\Syntax\From;
 class Select extends AbstractQuery {
 
 
-    public function __construct($columns = null)
+    public function __construct($columns)
     {
         $this->query = "SELECT ";
-        if(isset($columns))
+        if(gettype($columns)==="array")
         {
-            if(gettype($columns)==="array")
-            {
             foreach ($columns as $column)
             {
                 $this->query.=$column.",";
@@ -22,7 +20,7 @@ class Select extends AbstractQuery {
             {
                 $this->query.=$columns.",";
             }
-        }
+
 
 
         return $this;
