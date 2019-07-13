@@ -2,6 +2,7 @@
 
 namespace tcb\QueryBuilder;
 
+use tcb\QueryBuilder\Syntax\Delete;
 use tcb\QueryBuilder\Syntax\Select;
 use tcb\QueryBuilder\Syntax\Insert;
 use tcb\QueryBuilder\Syntax\Drop;
@@ -32,9 +33,10 @@ class QueryBuilder {
     
     
     
-    public function delete($table)
+    public function delete()
     {
-
+        $query = new Delete();
+        return $query;
     }
     
     
