@@ -6,6 +6,7 @@ use tcb\QueryBuilder\Syntax\Select;
 use tcb\QueryBuilder\Syntax\Insert;
 use tcb\QueryBuilder\Syntax\Drop;
 use tcb\QueryBuilder\Syntax\Create;
+use tcb\QueryBuilder\Syntax\Update;
 
 class QueryBuilder {
 
@@ -38,8 +39,10 @@ class QueryBuilder {
     
     
     
-    public function update()
+    public function update($table)
     {
+        $query = new Update($table);
+        return $query;
 
     }
 

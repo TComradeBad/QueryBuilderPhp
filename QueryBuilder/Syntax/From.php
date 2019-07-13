@@ -3,7 +3,7 @@
 namespace tcb\QueryBuilder\Syntax;
 
 use tcb\QueryBuilder\AbstractQuery;
-use tcb\QueryBuilder\Syntax\Where;
+use tcb\QueryBuilder\Syntax\WhereForSelect;
 
 class From extends AbstractQuery
 {
@@ -29,7 +29,7 @@ class From extends AbstractQuery
 
     public function where()
     {
-        $where = new Where($this->query);
+        $where = new WhereForSelect($this->query);
         return $where;
     }
 

@@ -9,7 +9,9 @@ class CreateTest extends TestCase
     {
         $br = new QueryBuilder();
         return [
-            ["CREATE TABLE table(id INTEGER NOT NULL PRIMARY KEY,name VARCHAR(20),text TEXT,doc BLOB);",
+            [
+                "CREATE TABLE table(id INTEGER NOT NULL PRIMARY KEY,name VARCHAR(20),text TEXT,doc BLOB);",
+
                 $br->create("table")->columnsArray(
                     [
                         "id" => "INTEGER NOT NULL PRIMARY KEY",
@@ -18,7 +20,9 @@ class CreateTest extends TestCase
                         "doc" => "BLOB"
                     ])->get()
             ],
-            ["CREATE TABLE table(id INTEGER NOT NULL AUTO_INCREMENT,name VARCHAR(20),text TEXT,doc BLOB,PRIMARY KEY(id));",
+            [
+                "CREATE TABLE table(id INTEGER NOT NULL AUTO_INCREMENT,name VARCHAR(20),text TEXT,doc BLOB,PRIMARY KEY(id));",
+
                 $br->create("table")->integer("id","NOT NULL AUTO_INCREMENT")
                     ->varchar(name,20)->text("text")->blob("doc")->primaryKey("id")->get()
             ]

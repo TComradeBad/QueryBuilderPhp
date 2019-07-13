@@ -38,18 +38,6 @@ class Where extends AbstractQuery{
         return $this;
     }
 
-    public function orderBy()
-    {
-        $order = new OrderBy($this->query);
-        return $order;
-    }
-
-    public function groupBy($column)
-    {
-        $group = new GroupBy($this->query,$column);
-        return $group;
-    }
-
     public function get()
     {
         $this->query = substr_replace($this->query,"",-1);

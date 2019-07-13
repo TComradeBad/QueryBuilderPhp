@@ -9,15 +9,21 @@ class InsertTest extends TestCase
     {
         $br = new QueryBuilder();
         return [
-            ["INSERT INTO table(name) VALUES (DIO);",
+            [
+                "INSERT INTO table(name) VALUES (DIO);",
+
                 $br->insert("table","name")->values("DIO")->get()
             ],
 
-            ["INSERT INTO table(name,subname) VALUES (DIO,BRANDO);",
+            [
+                "INSERT INTO table(name,subname) VALUES (DIO,BRANDO);",
+
                 $br->insert("table",["name","subname"])->values(["DIO","BRANDO"])->get()
             ],
 
-            ["INSERT INTO table(name,subname) VALUES (DIO,BRANDO),(DOOM,GUY),(SILVER,FANG);",
+            [
+                "INSERT INTO table(name,subname) VALUES (DIO,BRANDO),(DOOM,GUY),(SILVER,FANG);",
+
                 $br->insert("table",["name","subname"])
                     ->values([
                         ["DIO","BRANDO"],
