@@ -24,7 +24,7 @@ class CreateTest extends TestCase
                 "CREATE TABLE table(id INTEGER NOT NULL AUTO_INCREMENT,name VARCHAR(20),text TEXT,doc BLOB,PRIMARY KEY(id));",
 
                 $br->create("table")->integer("id","NOT NULL AUTO_INCREMENT")
-                    ->varchar(name,20)->text("text")->blob("doc")->primaryKey("id")->get()
+                    ->varchar("name",20)->text("text")->blob("doc")->primaryKey("id")->get()
             ]
         ];
     }

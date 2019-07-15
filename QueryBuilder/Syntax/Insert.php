@@ -6,12 +6,23 @@ use tcb\QueryBuilder\AbstractQuery;
 
 class Insert extends  AbstractQuery
 {
-
+    /**
+     * Дополнительное поле со значениями добавляемой в таблицу строки
+     *
+     * @var string
+     */
     private $values;
+
+    /**
+     * Начало строки INSERT запроса
+     *
+     * @param string $table
+     * @param array $columns
+     */
     public function __construct($table,$columns)
     {
         $this->query="INSERT INTO $table(";
-        if(!is_string($columns))
+        if(is_array($columns))
         {
 
             foreach ($columns as $column)
@@ -28,6 +39,15 @@ class Insert extends  AbstractQuery
         return $this;
     }
 
+    /**
+     * Команда VALUES c перечнем значений создаваемой строки
+     *
+     * $values может иметь вид строки для одной колонки, массива для нескольких колонок
+     * или двумерного массива для создания нескольких строк в таблице
+     *
+     * @param string, array $values
+     * @return Insert $this
+     */
     public function values($values)
     {
         $valueOneSize=null;
@@ -54,18 +74,23 @@ class Insert extends  AbstractQuery
 
             }
 
+            /**
+             * Массив должен содержать только другие одномерные массивы, либо строки
+             */
             if(isset($valueDoubleSize))
             {
                 $valueDoubleSize=substr_replace($valueDoubleSize,"",-1);
                 $this->values=$valueDoubleSize;
                 $this->values="VALUES ".$this->values;
-            }
-            if(isset($valueOneSize))
+            }else
             {
-                $valueOneSize=substr_replace($valueOneSize,"",-1);
-                $valueOneSize="($valueOneSize)";
-                $this->values=$valueOneSize;
-                $this->values="VALUES ".$this->values;
+                if(isset($valueOneSize))
+                {
+                    $valueOneSize=substr_replace($valueOneSize,"",-1);
+                    $valueOneSize="($valueOneSize)";
+                    $this->values=$valueOneSize;
+                    $this->values="VALUES ".$this->values;
+                }
             }
         }else
         {
@@ -79,6 +104,9 @@ class Insert extends  AbstractQuery
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function get()
     {
         $this->query.=$this->values;

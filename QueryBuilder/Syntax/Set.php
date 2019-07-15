@@ -7,6 +7,11 @@ use tcb\QueryBuilder\AbstractQuery;
 
 class Set extends AbstractQuery
 {
+    /**
+     * Set constructor.
+     * @param string $query
+     * @param string $values
+     */
     public function __construct($query,$values)
     {
         $this->query = $query." SET ";
@@ -18,6 +23,11 @@ class Set extends AbstractQuery
 
     }
 
+    /**
+     * команда WHERE
+     *
+     * @return Where
+     */
     public function where()
     {
         return new Where($this->query);

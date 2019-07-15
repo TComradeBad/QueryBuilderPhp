@@ -4,9 +4,15 @@ namespace tcb\QueryBuilder\Syntax;
 use tcb\QueryBuilder\AbstractQuery;
 use tcb\QueryBuilder\Syntax\From;
 
-class Select extends AbstractQuery {
+class Select extends AbstractQuery
+{
 
 
+    /**
+     * Начало строки SELECT запроса
+     *
+     * @param string $columns
+     */
     public function __construct($columns)
     {
         $this->query = "SELECT ";
@@ -20,20 +26,25 @@ class Select extends AbstractQuery {
             {
                 $this->query.=$columns.",";
             }
-
-
-
         return $this;
-
     }
 
-        public function from($tables)
-        {
+    /**
+     * Команда FROM
+     *
+     * @param string $tables
+     * @return \tcb\QueryBuilder\Syntax\From
+     */
+    public function from($tables)
+    {
         $this->query=substr_replace($this->query,' ',-1);
         $from = new \tcb\QueryBuilder\Syntax\From($tables,$this->query);
         return $from;
-        }
+    }
 
+    /**
+     * @return string
+     */
         public function get()
         {
             $this->query=substr_replace($this->query,' ',-1);
@@ -41,6 +52,13 @@ class Select extends AbstractQuery {
         }
 
 
+    /**
+     * Добавляет функцию count() в запрос
+     *
+     * @param array $columns
+     * @param string null $asColumn название колонки с функцией count()
+     * @return $this
+     */
         public function count($columns, $asColumn= null)
         {
             if(isset($asColumn))
@@ -54,8 +72,13 @@ class Select extends AbstractQuery {
 
         }
 
-
-
+    /**
+     * Добавляет функцию min() в запрос
+     *
+     * @param string $columns
+     * @param string null $asColumn название колонки с функцией count()
+     * @return $this
+     */
         public function min($columns, $asColumn= null)
         {
             if(isset($asColumn))
@@ -69,6 +92,13 @@ class Select extends AbstractQuery {
         }
 
 
+    /**
+     * Добавляет функцию max() в запрос
+     *
+     * @param string $columns
+     * @param  string null $asColumn название колонки с функцией count()
+     * @return $this
+     */
         public function max($columns, $asColumn= null)
          {
              if(isset($asColumn))
@@ -81,7 +111,12 @@ class Select extends AbstractQuery {
              return $this;
          }
 
-
+    /**
+     * добавляет в запрос колонки с представлением другого имени с помощью команды AS
+     *
+     * @param array $columns массив представленный в виде "название колонки" => "название в выходной таблице"
+     * @return $this
+     */
         public function asColumns($columns)
         {
             foreach ($columns as $key => $column)

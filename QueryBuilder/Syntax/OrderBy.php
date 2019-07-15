@@ -6,23 +6,42 @@ use tcb\QueryBuilder\AbstractQuery;
 
 class OrderBy extends AbstractQuery
 {
+    /**
+     * Команда ORDER BY
+     * @param string $query
+     */
     public function __construct($query)
     {
         $this->query=$query."ORDER BY ";
     }
 
+    /**
+     * Параметр для сортировки строк таблицы по порядку
+     *
+     * @param string $column
+     * @return $this
+     */
     public function asc($column)
     {
         $this->query.=$column." ASC,";
         return $this;
     }
 
+    /**
+     * Параметр для сортировки строк таблицы в обратном порядке
+     *
+     * @param string $column
+     * @return $this
+     */
     public function desc($column)
     {
         $this->query.=$column." DESC,";
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function get()
     {
         $this->query=substr_replace($this->query,'',-1);

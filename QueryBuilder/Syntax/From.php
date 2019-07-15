@@ -7,7 +7,11 @@ use tcb\QueryBuilder\Syntax\WhereForSelect;
 
 class From extends AbstractQuery
 {
-
+    /**
+     * Команда FROM
+     * @param array $tables
+     * @param string $query
+     */
     public function __construct($tables,$query)
     {
         $this->query=$query;
@@ -27,6 +31,11 @@ class From extends AbstractQuery
 
     }
 
+    /**
+     * Команда WHERE
+     *
+     * @return \tcb\QueryBuilder\Syntax\WhereForSelect
+     */
     public function where()
     {
         $where = new WhereForSelect($this->query);
