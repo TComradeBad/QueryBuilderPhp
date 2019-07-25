@@ -1,9 +1,10 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
-use tcb\QueryBuilder\AbstractQuery;
-use tcb\QueryBuilder\Syntax\WhereForSelect;
+use tcbQB\QueryBuilder\AbstractQuery;
+use tcbQB\QueryBuilder\Syntax\WhereForSelect;
+use tcbQB\QueryBuilder\Syntax\WhereTrait;
 
 class From extends AbstractQuery
 {
@@ -35,7 +36,7 @@ class From extends AbstractQuery
     /**
      * Команда WHERE
      *
-     * @return \tcb\QueryBuilder\Syntax\WhereForSelect
+     * @return \tcbQB\QueryBuilder\Syntax\WhereForSelect
      */
     public function where()
     {

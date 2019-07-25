@@ -6,8 +6,10 @@
  * Time: 16:55
  */
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
+
+use tcbQB\QBQueryBuilder\Syntax\From;
 
 class FromForDelete extends From
 {

@@ -1,9 +1,10 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
 
-use tcb\QueryBuilder\AbstractQuery;
+use tcbQB\QBQueryBuilder\Syntax\From;
+use tcbQB\QueryBuilder\AbstractQuery;
 
 class Delete extends AbstractQuery
 {
@@ -22,10 +23,10 @@ class Delete extends AbstractQuery
      * Команда FROM
      *
      * @param array $tables
-     * @return From
+     * @return \tcbQB\QueryBuilder\Syntax\From
      */
     public function from($tables)
     {
-        return new From($tables,$this->query);
+        return new \tcbQB\QueryBuilder\Syntax\From($tables,$this->query);
     }
 }

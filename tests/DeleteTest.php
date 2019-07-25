@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use tcb\QueryBuilder\QueryBuilder;
+use tcbQB\QueryBuilder\QueryBuilder;
 
 class DeleteTest extends TestCase
 {
@@ -18,7 +18,7 @@ class DeleteTest extends TestCase
                 "DELETE FROM table1,table2 WHERE (id = 1) XOR (author = 'Neil Young');",
 
                 $br->delete()->from(["table1","table2"])->where()->equals("id",1)
-                    ->equals("author",\tcb\QueryBuilder\AbstractQuery::sqlString("Neil Young"),"XOR")->get()
+                    ->equals("author",\tcbQB\QueryBuilder\AbstractQuery::sqlString("Neil Young"),"XOR")->get()
             ]
         ];
     }

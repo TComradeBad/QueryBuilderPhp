@@ -1,6 +1,6 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
 /**
  * Дополнительные методы для WHERE в SELECT запросе

@@ -1,9 +1,9 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
 
-use tcb\QueryBuilder\AbstractQuery;
+use tcbQB\QueryBuilder\AbstractQuery;
 
 class Set extends AbstractQuery
 {
@@ -11,7 +11,7 @@ class Set extends AbstractQuery
     /**
      * Set constructor.
      * @param string $query
-     * @param string $values
+     * @param array $values
      */
     public function __construct($query, $values)
     {

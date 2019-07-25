@@ -1,13 +1,13 @@
 <?php
 
-namespace tcb\QueryBuilder;
+namespace tcbQB\QueryBuilder;
 
-use tcb\QueryBuilder\Syntax\Delete;
-use tcb\QueryBuilder\Syntax\Select;
-use tcb\QueryBuilder\Syntax\Insert;
-use tcb\QueryBuilder\Syntax\Drop;
-use tcb\QueryBuilder\Syntax\Create;
-use tcb\QueryBuilder\Syntax\Update;
+use tcbQB\QueryBuilder\Syntax\Delete;
+use tcbQB\QueryBuilder\Syntax\Select;
+use tcbQB\QueryBuilder\Syntax\Insert;
+use tcbQB\QueryBuilder\Syntax\Drop;
+use tcbQB\QueryBuilder\Syntax\Create;
+use tcbQB\QueryBuilder\Syntax\Update;
 
 class QueryBuilder {
 
@@ -28,7 +28,7 @@ class QueryBuilder {
 
     /**
      * @param string $table
-     * @param string $columns
+     * @param array $columns
      * @return Insert
      */
     public function insert($table,$columns)

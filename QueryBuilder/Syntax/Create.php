@@ -1,11 +1,11 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
 
 use phpDocumentor\Reflection\Types\Array_;
 use SebastianBergmann\CodeCoverage\TestFixture\C;
-use tcb\QueryBuilder\AbstractQuery;
+use tcbQB\QueryBuilder\AbstractQuery;
 
 class Create extends AbstractQuery
 {

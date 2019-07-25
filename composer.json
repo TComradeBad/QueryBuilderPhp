@@ -1,11 +1,11 @@
 {
-  "name": "vendor_name/package_name",
+  "name": "tcomradebad/querybuilder",
   "description": "description_text",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
-      "name": "author's name",
+      "name": "TComradeBad",
       "email": "email@example.com"
     }
   ],
@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "tcb\\": ""
+      "tcbQB\\": ""
     }
   }
 }

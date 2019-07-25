@@ -1,8 +1,8 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
-use tcb\QueryBuilder\AbstractQuery;
+use tcbQB\QueryBuilder\AbstractQuery;
 
 class Update extends AbstractQuery
 {
@@ -20,7 +20,7 @@ class Update extends AbstractQuery
     /**
      * Команда SET
      *
-     * @param string $values
+     * @param array $values
      * @return Set
      */
     public function set($values)

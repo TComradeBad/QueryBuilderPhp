@@ -1,9 +1,9 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
 
-use tcb\QueryBuilder\AbstractQuery;
+use tcbQB\QueryBuilder\AbstractQuery;
 
 class Drop extends AbstractQuery
 {

@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use tcb\QueryBuilder\QueryBuilder;
-use tcb\QueryBuilder\AbstractQuery;
+use tcbQB\QueryBuilder\QueryBuilder;
+use tcbQB\QueryBuilder\AbstractQuery;
 
 class UpdateTest extends TestCase
 {

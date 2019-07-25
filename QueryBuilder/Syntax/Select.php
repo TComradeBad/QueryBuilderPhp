@@ -1,8 +1,8 @@
 <?php
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
-use tcb\QueryBuilder\AbstractQuery;
-use tcb\QueryBuilder\Syntax\From;
+use tcbQB\QueryBuilder\AbstractQuery;
+use tcbQB\QueryBuilder\Syntax\From;
 
 class Select extends AbstractQuery
 {
@@ -32,13 +32,13 @@ class Select extends AbstractQuery
     /**
      * Команда FROM
      *
-     * @param string $tables
-     * @return \tcb\QueryBuilder\Syntax\From
+     * @param array $tables
+     * @return \tcbQB\QueryBuilder\Syntax\From
      */
     public function from($tables)
     {
         $this->query=substr_replace($this->query,' ',-1);
-        $from = new \tcb\QueryBuilder\Syntax\From($tables,$this->query);
+        $from = new \tcbQB\QueryBuilder\Syntax\From($tables,$this->query);
         return $from;
     }
 

@@ -6,7 +6,7 @@
  * Time: 17:32
  */
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
 
 trait WhereTrait

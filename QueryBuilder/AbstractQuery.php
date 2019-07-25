@@ -1,6 +1,6 @@
 <?php
 
-namespace tcb\QueryBuilder;
+namespace tcbQB\QueryBuilder;
 
 abstract class AbstractQuery{
 

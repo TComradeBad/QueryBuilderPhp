@@ -1,10 +1,10 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
-use tcb\QueryBuilder\AbstractQuery;
-use tcb\QueryBuilder\Syntax\OrderBy;
-use tcb\QueryBuilder\Syntax\GroupBy;
+use tcbQB\QueryBuilder\AbstractQuery;
+use tcbQB\QueryBuilder\Syntax\OrderBy;
+use tcbQB\QueryBuilder\Syntax\GroupBy;
 
 class Where extends AbstractQuery
 {

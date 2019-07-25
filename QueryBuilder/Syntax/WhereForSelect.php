@@ -1,6 +1,6 @@
 <?php
 
-namespace tcb\QueryBuilder\Syntax;
+namespace tcbQB\QueryBuilder\Syntax;
 
 /**
  * Класc WHERE входящий в цепочку SELECT запрса

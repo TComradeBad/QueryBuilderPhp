@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use tcb\QueryBuilder\QueryBuilder;
+use tcbQB\QueryBuilder\QueryBuilder;
 
 
 
@@ -28,7 +28,7 @@ class SelectTest extends TestCase
                 "SELECT column,count(name) AS name count FROM table WHERE (x != 'Heaven and Hell') GROUP BY column ORDER BY column ASC;",
 
                 $br->select("column")->count("name","name count")->from("table")
-                    ->where()->notEquals("x",\tcb\QueryBuilder\AbstractQuery::sqlString('Heaven and Hell'))
+                    ->where()->notEquals("x",\tcbQB\QueryBuilder\AbstractQuery::sqlString('Heaven and Hell'))
                     ->groupBy("column")->orderBy()->asc("column")->get()
             ]
 

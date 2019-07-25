@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use tcb\QueryBuilder\QueryBuilder;
+use tcbQB\QueryBuilder\QueryBuilder;
 
 class CreateTest extends TestCase
 {
