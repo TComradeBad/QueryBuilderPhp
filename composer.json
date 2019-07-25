@@ -1,12 +1,11 @@
 {
   "name": "tcomradebad/querybuilder",
-  "description": "description_text",
+  "description": "my query builder for courses",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
-      "name": "TComradeBad",
-      "email": "email@example.com"
+      "name": "TComradeBad"
     }
   ],
   "require-dev": {
