@@ -11,7 +11,7 @@ class Select extends AbstractQuery
     /**
      * Начало строки SELECT запроса
      *
-     * @param string $columns
+     * @param array $columns
      */
     public function __construct($columns)
     {

@@ -11,10 +11,6 @@ namespace tcb\QueryBuilder\Syntax;
 
 class FromForDelete extends From
 {
-
-    public function where()
-    {
-       return new Where($this->query);
-    }
+    use WhereTrait;
 
 }

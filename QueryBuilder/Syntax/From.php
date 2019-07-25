@@ -7,6 +7,7 @@ use tcb\QueryBuilder\Syntax\WhereForSelect;
 
 class From extends AbstractQuery
 {
+    use WhereTrait;
     /**
      * Команда FROM
      * @param array $tables
