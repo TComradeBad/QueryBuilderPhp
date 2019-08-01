@@ -32,7 +32,7 @@ class Select extends AbstractQuery
     /**
      * Команда FROM
      *
-     * @param array $tables
+     * @param array,string $tables
      * @return \tcbQB\QueryBuilder\Syntax\From
      */
     public function from($tables)

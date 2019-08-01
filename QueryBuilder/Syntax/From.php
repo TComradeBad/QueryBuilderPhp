@@ -8,10 +8,10 @@ use tcbQB\QueryBuilder\Syntax\WhereTrait;
 
 class From extends AbstractQuery
 {
-    use WhereTrait;
+    use WhereForSelectTrait;
     /**
      * Команда FROM
-     * @param array $tables
+     * @param array,string $tables
      * @param string $query
      */
     public function __construct($tables,$query)
@@ -33,15 +33,20 @@ class From extends AbstractQuery
 
     }
 
-    /**
-     * Команда WHERE
-     *
-     * @return \tcbQB\QueryBuilder\Syntax\WhereForSelect
-     */
-    public function where()
+
+    public function leftJoin($table_name)
     {
-        $where = new WhereForSelect($this->query);
-        return $where;
+        return new Join($table_name,"left",$this->query);
+
     }
 
+    public function innerJoin($table_name)
+    {
+        return new Join($table_name,"inner",$this->query);
+    }
+
+    public function rightJoin($table_name)
+    {
+        return new Join($table_name,"right",$this->query);
+    }
 }
