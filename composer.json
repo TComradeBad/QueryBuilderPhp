@@ -1,7 +1,7 @@
 {
   "name": "tcomradebad/querybuilder",
   "description": "my query builder for courses",
-  "minimum-stability": "stable",
+  "minimum-stability": "beta",
   "license": "proprietary",
   "authors": [
     {
